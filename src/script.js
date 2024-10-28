@@ -6,6 +6,7 @@ import computerVertexShader from './shaders/test/computer-vertex.glsl'
 import Canvas from './canvas'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js'
+import TypingText from './typing-text'
 
 const domLoaded = async ()=> new Promise(res => {
     document.addEventListener('DOMContentLoaded', ()=> res())
@@ -14,7 +15,8 @@ const domLoaded = async ()=> new Promise(res => {
 const main = async()=>{
 
 await domLoaded()
-window.scrollTo(0, 0)
+const parent = document.querySelector('.parent')
+parent.scrollTo(0, 0)
 
 // Loaders
 const dracoLoader = new DRACOLoader()
@@ -47,7 +49,6 @@ let currentTexture = await createTexture("./logo.png")
 let nextTexture = await createTexture("./logo.png")
 
 let ratio = 0
-let preventScroll = false
 
 const setImage = async(path)=>{
     currentTexture = nextTexture
@@ -65,11 +66,6 @@ triggers.map(container => {
                 const image = container.parentElement.querySelector('img')
                 setImage(image.src)
                 document.body.style.setProperty("--color", container.parentElement.dataset.color)
-                window.scrollTo({
-                    top: container.parentElement.getBoundingClientRect().top + window.scrollY,
-                    behavior: "smooth"
-                })
-                preventScroll = true
             }
         }
     })
@@ -78,10 +74,10 @@ triggers.map(container => {
 const nextButtons = Array.from(document.querySelectorAll(".next"))
 nextButtons.map(button => {
     button.addEventListener('click', ()=>{
-        const project = button.parentElement.parentElement
+        const project = button.parentElement.parentElement        
         const nextProject = project.parentElement.children[Array.from(project.parentElement.children).indexOf(project)+1]
-        if(nextProject) window.scrollTo({
-            top: nextProject.getBoundingClientRect().top + window.scrollY,
+        if(nextProject) parent.scrollTo({
+            top: nextProject.getBoundingClientRect().top + parent.scrollTop,
             behavior: "smooth"
         })
     })
@@ -118,20 +114,6 @@ const sizes = {
     width: window.innerWidth,
     height: window.innerHeight
 }
-
-let activateScroll = null
-const scrolled= ()=>{
-    if(activateScroll) clearTimeout(activateScroll)
-    activateScroll = setTimeout(()=> preventScroll = false, 100)
-}
-window.addEventListener('scroll', ()=>{
-    material.uniforms.uAberration.value = Math.min(window.scrollY / window.innerHeight, 1)
-    scrolled()
-})
-window.addEventListener('wheel', (e)=> {
-    console.log(e)
-    if(preventScroll) e.preventDefault()
-}, {passive: false})
 
 window.addEventListener('resize', () =>
 {
@@ -206,6 +188,8 @@ const tick = () =>
     material.uniforms.uTime.value = time
     material.uniforms.uCurrentTexture.value = currentTexture
     material.uniforms.uNextTexture.value = nextTexture
+    material.uniforms.uAberration.value = Math.min(parent.scrollTop / window.innerHeight, 1)
+
     ratio += delta
     ratio = Math.min(1, ratio);
     material.uniforms.uRatio.value = ratio
