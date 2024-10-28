@@ -1,0 +1,43 @@
+{   
+    "dune-keepers": {
+        "name": "Dune Keepers",
+        "slug": "dune-keepers",
+        "type": "game",
+        "description": "A City builder/Tower defense where you build your city during the day and prepare for the storm !",
+        "languages": ["C#"],
+        "tools": ["Unity", "Procreate", "Photoshop", "Ableton"],
+        "thumbnail": "/dune-keepers.png",
+        "credits": ["Sound Track : https://freesound.org/people/SergeQuadrado/sounds/654401/"],
+        "link": "https://aznoqmous.itch.io/dune-keepers"
+    },
+    "yielding-armada-zero": {
+        "name": "Yielding Armada Zero",
+        "slug": "yielding-armada-zero",
+        "type": "game",
+        "description": "A Tetris SHMUP where you salvage parts to make your spaceship grow !",
+        "languages": ["C#", "NodeJS"],
+        "tools": ["Unity", "Procreate", "Photoshop", "Ableton"],
+        "thumbnail": "/yaz.gif",
+        "screenshots": ["/yaz-gameplay.gif"]
+    },
+    "wizard-village": {
+        "name": "Wizard Village",
+        "slug": "wizard-village",
+        "type": "game",
+        "description": "Wizard Village is a potion crafting roguelike where you manage a potion brewery shop.",
+        "languages": ["C#"],
+        "tools": ["Unity", "Procreate", "Photoshop", "Ableton"],
+        "thumbnail": "/wizard-village.png",
+        "screenshots": []
+    },
+    "nuclear-rain": {
+        "name": "Nuclear Rain",
+        "slug": "nuclear-rain",
+        "type": "game",
+        "description": "A top down shooter roguelike taking inspiration from Nuclear Throne and Risk of Rain",
+        "languages": ["JavaScript", "HTML", "CSS"],
+        "tools": ["electron"],
+        "thumbnail": "/nuclear-rain.png",
+        "screenshots": []
+    }
+}
