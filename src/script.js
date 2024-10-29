@@ -12,11 +12,24 @@ const domLoaded = async ()=> new Promise(res => {
     document.addEventListener('DOMContentLoaded', ()=> res())
 })
 
+const sleep = async(time)=> new Promise(res => setTimeout(res, time))
+
 const main = async()=>{
 
 await domLoaded()
 const parent = document.querySelector('.parent')
 parent.scrollTo(0, 0)
+const triggers = Array.from(document.querySelectorAll(".trigger"))
+const containers = triggers.map(c => c.parentElement)
+
+sleep(1000).then(()=> {
+    document.body.classList.add('active')
+    parent.scrollTo({
+        behavior: "smooth",
+        top: containers[1].getBoundingClientRect().top + parent.scrollTop
+    })
+})
+
 
 // Loaders
 const dracoLoader = new DRACOLoader()
@@ -57,19 +70,20 @@ const setImage = async(path)=>{
     nextTexture = await createTexture(path)
 }
 
-const triggers = Array.from(document.querySelectorAll(".trigger"))
-const containers = triggers.map(c => c.parentElement)
-triggers.map(container => {
+
+triggers.map(trigger => {
     const observer = new IntersectionObserver((entries)=>{
         for(let entry of entries){
             if(entry.isIntersecting) {
-                const image = container.parentElement.querySelector('img')
+                const container = trigger.parentElement
+                const image = trigger.parentElement.querySelector('img')
                 setImage(image.src)
-                document.body.style.setProperty("--color", container.parentElement.dataset.color)
+                document.body.style.setProperty("--color", trigger.parentElement.dataset.color)
+                containers.map(c => c.classList.toggle('active', c == container))
             }
-        }
+        }   
     })
-    observer.observe(container)
+    observer.observe(trigger)
 })
 const nextButtons = Array.from(document.querySelectorAll(".next"))
 nextButtons.map(button => {
