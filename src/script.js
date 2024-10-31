@@ -222,7 +222,7 @@ const tick = () =>
     
     camera.position.set(
         cameraPosition.x + Math.sin(time) * 0.1, 
-        cameraPosition.y + Math.sin(time) * 0.1, 
+        cameraPosition.y + Math.cos(time) * 0.1, 
         2.5 - (1 - material.uniforms.uAberration.value) * 1.5
     )
 
