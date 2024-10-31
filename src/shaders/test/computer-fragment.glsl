@@ -41,24 +41,10 @@ void main()
         }
     }
 
-    // gl_FragColor = mix(
-    //     gl_FragColor, 
-    //     vec4(1.,1.,1.,1.),
-    //     step(0.999, (sin(uTime + vGlPosition.x + vGlPosition.y) + 1.0)/2.0) * uAberration
-    // );
-
     if(step(0.99, (sin(-uTime + vGlPosition.x + vGlPosition.y) + 1.0)/2.0) * uAberration >= 1.0){
         if ( mod(gl_FragCoord.x + gl_FragCoord.y - 5.0, 8.0) == 0.0 ) {
-            gl_FragColor = vec4( 1.0,1.0,1.0, alpha);
+            gl_FragColor = vec4( 1.0, 1.0, 1.0, alpha);
         }
     }
-
-    // gl_FragColor = mix(
-    //     gl_FragColor, 
-    //     vec4(.0,.0,.0,.0), 
-    //     step(0.999, (sin(-uTime + vGlPosition.x + vGlPosition.y) + 1.0)/2.0) * uAberration
-    // );
-
-    //gl_FragColor =  vec4(gl_FragColor.xyz * uAberration, min(uAberration, 0.9));
     
 }

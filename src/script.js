@@ -106,7 +106,7 @@ const material = new THREE.ShaderMaterial({
     vertexShader: testVertexShader,
     fragmentShader: testFragmentShader,
     side: THREE.DoubleSide,
-    // wireframe: true,
+    //wireframe: true,
     uniforms: {
         uTime: { value: 0 },
         uScreenRatio: { value: 0 },
@@ -223,7 +223,7 @@ const tick = () =>
     camera.position.set(
         cameraPosition.x + Math.sin(time) * 0.1, 
         cameraPosition.y + Math.cos(time) * 0.1, 
-        2.5 - (1 - material.uniforms.uAberration.value) * 1.5
+        3 - (1 - material.uniforms.uAberration.value) * 1.5
     )
 
     camera.lookAt(new THREE.Vector3(-1 * material.uniforms.uAberration.value, 0, 0))

@@ -21,7 +21,7 @@ void main()
     float dist = distance(position.xy, vec2(0.0,0.0));
 
     newPosition.z += vTexColor.z / 10.0;
-    newPosition.z += vTexColor.z * step(0.99, (sin(-uTime + uv.x + uv.y) + 1.0)/2.0) * (0.2 + uAberration * 0.8) / 2.0;
+    newPosition.z += vTexColor.z * step(0.99, (sin(-uTime + uv.x + uv.y) + 1.0)/2.0) * (0.5 + uAberration * 0.5) / 2.0;
 
     newPosition.z -=  dist * dist / 2.0 * uAberration;
     newPosition *= max(1.0, (sin(min(1.0, uRatio * 2.0) * PI)) * 0.2 + 1.0); // bounce
