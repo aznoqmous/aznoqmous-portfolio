@@ -6,7 +6,10 @@ import computerVertexShader from './shaders/test/computer-vertex.glsl'
 import Canvas from './canvas'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js'
-import TypingText from './typing-text'
+
+const isMobile = ()=> {
+    return window.innerWidth < 640;
+}
 
 const domLoaded = async ()=> new Promise(res => {
     document.addEventListener('DOMContentLoaded', ()=> res())
@@ -55,6 +58,7 @@ const createTexture = async(path)=>{
     })
     customCanvas.clear()
     customCanvas.ctx.drawImage(logo, 0, 0)
+    customCanvas.delete()
     return new THREE.CanvasTexture(customCanvas.c)
 }
 
@@ -80,6 +84,7 @@ triggers.map(trigger => {
                 setImage(image.src)
                 document.body.style.setProperty("--color", trigger.parentElement.dataset.color)
                 containers.map(c => c.classList.toggle('active', c == container))
+                document.body.classList.toggle('top', !containers.indexOf(containers.find(c => c.classList.contains('active'))))
             }
         }   
     })
@@ -126,7 +131,7 @@ scene.add(logoMesh)
 
 const sizes = {
     width: window.innerWidth,
-    height: window.innerHeight
+    height: isMobile() ? window.innerHeight / 1.5 : window.innerHeight
 }
 
 window.addEventListener('resize', () =>
@@ -144,8 +149,8 @@ window.addEventListener('resize', () =>
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 })
 
-const cameraPosition = {x: 0, y: 0, z: 2}
-
+let cameraPosition = {x: 0, y: 0, z: 3}
+if(isMobile()) cameraPosition = {x: 0, y: -0.6, z: 3} 
 window.addEventListener('mousemove', (e)=>{
     const movement = 2
     cameraPosition.x = -((e.clientX / window.innerWidth ) - 0.5)
@@ -223,10 +228,10 @@ const tick = () =>
     camera.position.set(
         cameraPosition.x + Math.sin(time) * 0.1, 
         cameraPosition.y + Math.cos(time) * 0.1, 
-        3 - (1 - material.uniforms.uAberration.value) * 1.5
+        cameraPosition.z - (1 - material.uniforms.uAberration.value) * 1.5
     )
-
-    camera.lookAt(new THREE.Vector3(-1 * material.uniforms.uAberration.value, 0, 0))
+    if(!isMobile()) camera.lookAt(new THREE.Vector3(-1 * material.uniforms.uAberration.value, 0, 0))
+    else camera.lookAt(new THREE.Vector3(0, 0, 0))
 
 }
 

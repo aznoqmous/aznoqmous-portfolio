@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
+@mixin mobile {
+    @media screen and (max-width: 640px) {
+        @content;
+    }
+}
+
 @mixin textBorder {
     --size: 2px;
     --text-border-color: var(--color);
@@ -54,9 +60,16 @@
     --accent-color: var(--color-red);
 
     --border-width: 2rem;
+
+    @include mobile {
+        --border-width: 0;
+    }
 }
 html {
     font-size: 20px;
+    @include mobile {
+        font-size: 16px;
+    }
 }
 html,
 body
@@ -77,6 +90,28 @@ body {
         z-index: -2;
         transition: 0.5s ease;
     }
+    &:after {
+        position: fixed;
+        content: "";
+        left: 0;
+        width: 100%;
+        top: 25%;
+        bottom: 0;
+        background: linear-gradient(to top, var(--color), var(--color), var(--color), transparent);
+        z-index: -1;
+        transition: 0.5s ease;
+    }
+    &.top {
+        &:after {
+            opacity: 0;
+        }
+        .webgl {
+            @include mobile {
+                transform: translate(0, 25%);
+            }
+        }
+
+    }
 }
 
 .webgl
@@ -86,6 +121,10 @@ body {
     left: 0;
     outline: none;
     z-index: -1;
+    @include mobile {
+        transform: translate(0, -25%);
+        transition: all 0.5s ease;
+    }
 }
 
 canvas:not(.webgl)
@@ -106,6 +145,9 @@ canvas:not(.webgl)
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    @include mobile {
+        display: none;
+    }
     li {
         list-style: none;
         i {
@@ -150,6 +192,12 @@ body {
         opacity: 0;
         transform: translateY(2rem);
         transition: 1s ease;
+
+        h1 {
+            @include mobile {
+                line-height: 0.8em;
+            }
+        }
     }
     &.active {
         .content {
@@ -171,6 +219,10 @@ body {
         border: var(--border-width) solid var(--color-white);
         padding: 2rem;
 
+        @include mobile {
+            flex-direction: column;
+            justify-content: flex-end;
+        }
         .content {
             display: flex;
             flex-direction: column;
@@ -248,7 +300,14 @@ body {
                 figure {
                     height: 9rem;
                     aspect-ratio: 1.6;
-                    
+                    @include mobile {
+                        &:not(:first-child) {
+                            display: none;
+                        }
+                        height: unset;
+                        aspect-ratio: 1.6;
+                        width: 100%;
+                    }
                     img {
                         object-fit: cover;
                         height: 100%;
@@ -306,7 +365,6 @@ body {
     gap: 1rem;
     @include textBorder;
     font-weight: 600;
-
     
     cursor: pointer;
     span {

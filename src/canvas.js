@@ -20,4 +20,7 @@ export default class Canvas {
     clear(){
         this.ctx.clearRect(0, 0, this.width, this.height)
     }
+    delete(){
+        this.c.remove()
+    }
 }
