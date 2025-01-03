@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>aznoqmous</title>
-    <link rel="stylesheet" href="./style.scss">
+    <link rel="stylesheet" href="/style.scss">
+    <link rel="favicon" href="/logo.png">
 </head>
 <body>
     <canvas class="webgl"></canvas>
-    <script type="module" src="./script.js"></script>
+    <script type="module" src="/script.js"></script>
 
     <ul class="navigation">
         <li><i></i></li>
@@ -18,26 +19,43 @@
         <li><i></i></li>
         <li><i></i></li>
     </ul>
+    <div class="socials">
+        <a href="https://aznoqmous.itch.io" target="_blank">
+            <svg width="256" height="232" viewBox="0 0 256 232" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M33.3756 2.27676C22.209 8.90701 0.208663 34.1813 0 40.8095V51.781C0 65.6883 12.9997 77.9118 24.8027 77.9118C38.9751 77.9118 50.7833 66.1662 50.7843 52.2254C50.7843 66.1662 62.1878 77.9118 76.3612 77.9118C90.5357 77.9118 101.573 66.1662 101.573 52.2254C101.573 66.1662 113.698 77.9118 127.872 77.9118H128.128C142.303 77.9118 154.428 66.1662 154.428 52.2254C154.428 66.1662 165.466 77.9118 179.639 77.9118C193.812 77.9118 205.216 66.1662 205.216 52.2254C205.216 66.1662 217.026 77.9118 231.197 77.9118C243 77.9118 256 65.6904 256 51.781V40.8095C255.791 34.1802 233.791 8.90493 222.626 2.27676C187.92 1.05817 163.859 0.847416 127.999 0.852632C92.1403 0.855762 43.2527 1.41602 33.3735 2.27676H33.3756ZM101.393 71.3619C100.038 73.7242 98.3597 75.8856 96.4064 77.7835C91.0563 83.0146 83.7228 86.2573 75.6382 86.2573C67.8585 86.2646 60.3862 83.2207 54.8261 77.7793C52.8877 75.8805 51.4145 73.8502 50.0655 71.486L50.0592 71.4902C48.7113 73.8585 46.8333 75.8878 44.8907 77.7887C39.3284 83.226 31.857 86.2673 24.0786 86.2604C23.1042 86.2604 22.0901 85.9912 21.27 85.7095C20.1307 97.5741 19.6498 108.913 19.4797 117.18L19.4776 117.227C19.4568 121.425 19.4359 124.878 19.415 129.674C19.6341 154.567 16.9497 210.357 30.3907 224.065C51.2194 228.922 89.5466 231.134 127.998 231.147H128.004C166.454 231.134 204.782 228.922 225.61 224.065C239.051 210.356 236.367 154.566 236.586 129.673C236.563 124.878 236.544 121.425 236.523 117.226L236.52 117.179C236.351 108.91 235.87 97.572 234.731 85.7074C233.911 85.9891 232.898 86.2583 231.922 86.2583C224.144 86.2653 216.673 83.224 211.11 77.7866C209.168 75.8857 207.29 73.8575 205.941 71.4881L205.934 71.4839C204.584 73.8481 203.112 75.8794 201.174 77.7772C195.614 83.2181 188.142 86.2617 180.363 86.2541C172.279 86.2541 164.945 83.0094 159.595 77.7793C157.641 75.8815 155.963 73.72 154.608 71.3577C153.267 73.7174 151.604 75.8788 149.667 77.7793C144.105 83.2196 136.632 86.2627 128.852 86.2552C128.571 86.2552 128.289 86.2427 128.007 86.2343H128C127.718 86.2427 127.437 86.2552 127.152 86.2552C119.372 86.263 111.899 83.2203 106.338 77.7803C104.4 75.8798 102.737 73.7185 101.397 71.3587L101.393 71.3619ZM80.0201 98.9993L80.018 99.0097H80.0336C88.4981 99.0274 96.0172 99.0097 105.334 109.178C112.666 108.409 120.329 108.025 127.997 108.036H128.003C135.671 108.026 143.334 108.409 150.667 109.178C159.984 99.0087 167.503 99.0264 175.967 99.0097H175.982L175.98 98.9993C179.979 98.9993 195.976 98.9993 207.123 130.306L219.096 173.254C227.968 205.204 216.255 205.986 201.644 206.014C179.977 205.208 167.98 189.472 167.98 173.739C155.986 175.705 141.994 176.688 128.002 176.689H127.996C114.003 176.689 100.011 175.705 88.0181 173.739C88.0181 189.472 76.02 205.208 54.3535 206.014C39.743 205.986 28.0307 205.205 36.9031 173.254L48.8793 130.307C60.026 99.0003 76.0231 99.0003 80.0222 99.0003L80.0201 98.9993ZM127.997 123.603V123.609C127.976 123.63 105.187 144.559 101.09 152.003L116.013 151.405V164.419C116.013 165.029 122.002 164.78 127.997 164.503H128.003C133.996 164.78 139.986 165.029 139.986 164.419V151.405L154.909 152.003C150.811 144.559 128.002 123.609 128.002 123.609V123.603L127.999 123.605L127.997 123.603Z" fill="currentColor"/>
+                </svg>
+        </a>
+        <a href="https://github.com/aznoqmous" target="_blank">
+            <svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M128 -0.000152588C198.694 -0.000152588 256 58.7509 256 131.237C256 189.209 219.366 238.387 168.538 255.756C162.048 257.049 159.744 252.951 159.744 249.456C159.744 245.13 159.898 230.999 159.898 213.437C159.898 201.201 155.802 193.214 151.206 189.144C179.712 185.892 209.664 174.794 209.664 124.387C209.664 110.051 204.698 98.3527 196.48 89.1623C197.811 85.8471 202.202 72.4985 195.226 54.4248C195.226 54.4248 184.499 50.9083 160.064 67.8811C149.837 64.9755 138.88 63.5135 128 63.4623C117.12 63.5135 106.176 64.9755 95.9616 67.8811C71.5008 50.9083 60.7488 54.4248 60.7488 54.4248C53.7984 72.4985 58.1888 85.8471 59.5072 89.1623C51.328 98.3527 46.3232 110.051 46.3232 124.387C46.3232 174.666 76.2112 185.935 104.64 189.25C100.979 192.527 97.664 198.307 96.512 206.794C89.216 210.147 70.6816 215.951 59.264 195.894C59.264 195.894 52.4928 183.284 39.6416 182.362C39.6416 182.362 27.1616 182.197 38.7712 190.337C38.7712 190.337 47.1552 194.369 52.9792 209.537C52.9792 209.537 60.4928 232.961 96.1024 225.025C96.1664 235.994 96.2816 246.333 96.2816 249.456C96.2816 252.925 93.9264 256.985 87.5392 255.769C36.672 238.425 0 189.221 0 131.237C0 58.7509 57.3184 -0.000152588 128 -0.000152588Z" fill="currentColor"/>
+            </svg>
+        </a>
+        <a href="https://x.com/aznoqmous" target="_blank">
+            <svg width="257" height="206" viewBox="0 0 257 206" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M81.1786 205.399C177.78 205.399 230.619 126.596 230.619 58.2674C230.619 56.0242 230.619 53.7979 230.465 51.5799C240.743 44.2706 249.614 35.1953 256.667 24.8112C247.092 28.9951 236.916 31.739 226.51 32.9487C237.467 26.4838 245.671 16.3271 249.601 4.34244C239.284 10.3663 228.007 14.6176 216.244 16.8987C196.353 -3.92012 163.086 -4.9288 141.927 14.6549C128.295 27.2823 122.497 46.1094 126.734 64.0674C84.5066 61.9755 45.1594 42.3417 18.4842 10.0424C4.54503 33.6714 11.6746 63.8882 34.753 79.0612C26.3946 78.8217 18.2154 76.6061 10.9066 72.5987V73.2549C10.9194 97.867 28.545 119.059 53.0442 123.936C45.313 126.016 37.1978 126.317 29.3386 124.817C36.2122 145.888 55.937 160.32 78.401 160.736C59.8026 175.128 36.8266 182.943 13.1722 182.917C8.99943 182.905 4.82663 182.665 0.666626 182.174C24.6922 197.347 52.6346 205.399 81.1786 205.361" fill="currentColor"/>
+                </svg>
+        </a>
+    </div>
 
     <div class="parent">
 
         <div class="container" data-color="#1b2125">
             <div class="trigger"></div>
-            <figure><img src="./logo.png"></figure>
+            <figure><img src="/logo.png"></figure>
         </div>
 
         <div class="container welcome" data-color="#1b2125" style="--text-color: white">
             <div class="trigger"></div>
             <div class="content">
-                <h1>welcome to my portfolio</h1>
+                <h1>welcome to my portfolio !</h1>
                 <h2>
-                    here are some projects I made in the past few years
+                    here are some projects I made over the past few years
                 </h2>
                 <div class="next">
                     <div class="arrow"></div>
                 </div>
             </div>
-            <figure><img src="./logo.png"></figure>
+            <figure><img src="/logo.png"></figure>
         </div>
 
         <div class="container" data-color="#fece00">
@@ -46,7 +64,7 @@
                 <div class="content">
                     <div class="time">September 2023</div>
                     <h2>Out Of Space</h2>
-                    <figure><img src="./out-of-space.png"></figure>
+                    <figure><img src="/out-of-space.png"></figure>
                     <div class="description">
                         Out of space is an <a href="https://store.steampowered.com/app/221180/Eufloria_HD/" target="_blank">Eufloria</a> remake and my 3rd solo Game Jam !
                         <br>
@@ -77,7 +95,7 @@
                         <span class="icon-trophy">Ranked 4th in <strong>overall</strong></span>
                     </div>
                     <div class="gallery">
-                        <figure><img src="./out-of-space-gameplay.gif"></figure>
+                        <figure><img src="/out-of-space-gameplay.gif"></figure>
                     </div>
                 </div>
                 <div class="next">
@@ -93,7 +111,7 @@
                 <div class="content">
                     <div class="time">January 2024</div>
                     <h2>Fool of the Trade</h2>
-                    <figure><img src="./fool-of-the-trade.png"></figure>
+                    <figure><img src="/fool-of-the-trade.png"></figure>
                     <div class="description">
                         <p>A boss rush game where you can exchange your weapons with your opponents</p>
                         <p>Soundtrack by the talented <a href="https://www.instagram.com/plageone.music/" target="_blank">plageone</a></p>
@@ -118,8 +136,8 @@
                         <span class="icon-trophy">Ranked 3rd over 400 entries !</span>
                     </div>
                     <div class="gallery">
-                        <figure><img src="./fott-gameplay-1.jpg"></figure>
-                        <figure><img src="./fott-gameplay-2.jpg"></figure>
+                        <figure><img src="/fott-gameplay-1.jpg"></figure>
+                        <figure><img src="/fott-gameplay-2.jpg"></figure>
                     </div>
                 </div>
                 <div class="next">
@@ -136,7 +154,7 @@
                 <div class="content">
                     <div class="time">March 2024</div>
                     <h2>Aberration Arena</h2>
-                    <figure><img src="./aberration-arena.png"></figure>
+                    <figure><img src="/aberration-arena.png"></figure>
                     <div class="description">
                         <p>Aberration Arena is a 2d version of the famous auto battler <strong>Super Auto Pet</strong>, with a working networking system that allows you to battle against players around the world !</p>
                         <p>Made in under 14 days for the <a href="https://itch.io/jam/acerola-jam-0" target="_blank">Acerola Jam 0</a> (Theme: Aberration)</p>
@@ -162,7 +180,7 @@
                         <span class="icon-wrench">Working server side implementation !</span>
                     </div>
                     <div class="gallery">
-                        <figure><img src="./aa-gameplay.gif"></figure>
+                        <figure><img src="/aa-gameplay.gif"></figure>
                     </div>
                 </div>
                 <div class="next">
@@ -178,7 +196,7 @@
                 <div class="content">
                     <div class="time">April 2024</div>
                     <h2>fish in a tank</h2>
-                    <figure><img src="./fish-in-a-tank.png"></figure>
+                    <figure><img src="/fish-in-a-tank.png"></figure>
                     <div class="description">
                         This game is an excuse to mess around with boids and cheap shadows, where you use your fish friends to protect the tank !<br>
                         Made in 2 days for the <a href="https://itch.io/jam/fishfest" target="_blank">fish fest</a> ! (Theme: Fish)
@@ -203,7 +221,7 @@
                         <span class="icon-wrench">Custom boids implementation !</span>
                     </div>
                     <div class="gallery">
-                        <figure><img src="./fiat-gameplay.gif"></figure>
+                        <figure><img src="/fiat-gameplay.gif"></figure>
                     </div>
                 </div>
                 <div class="next">
@@ -220,7 +238,7 @@
                 <div class="content">
                     <div class="time">July 2024</div>
                     <h2>Wizard Village</h2>
-                    <figure><img src="./wizard-village.png"></figure>
+                    <figure><img src="/wizard-village.png"></figure>
                     <div class="description">
                         <p><strong>Wizard Village</strong> is a <strong>potion crafting&nbsp;roguelike&nbsp;</strong>where you manage a potion brewery shop.&nbsp;Manage your inventory and find the right combination to cure your customers from shadow curses&nbsp;!</p>
                         <p>Made in 7 days for the&nbsp;&nbsp;<a href="https://itch.io/jam/pirate" target="_blank">July 2024 Pirate Software Jam</a>&nbsp;(Theme: Shadows - Alchemy)</p>
@@ -245,7 +263,7 @@
                         <span class="icon-chart">+3000 plays in a week !</span>
                     </div>
                     <div class="gallery">
-                        <figure><img src="./wizard-village-gameplay.gif"></figure>
+                        <figure><img src="/wizard-village-gameplay.gif"></figure>
                     </div>
                 </div>
                 <div class="next">
@@ -261,7 +279,7 @@
                 <div class="content">
                     <div class="time">August 2024</div>
                     <h2>Yielding Armada Zero</h2>
-                    <figure><img src="./yaz.gif"></figure>
+                    <figure><img src="/yaz.gif"></figure>
                     <div class="description">
                             <p>Yielding Armada Zero is a <strong>Tetris SHMUP</strong> where you salvage parts to make your spaceship grow !</p>
                             <p>Made in 2 days for the&nbsp; <a href="https://itch.io/jam/gmtk-2024" target="_blank">GMTK 2024</a> (Theme:&nbsp;Built To Scale)</p>
@@ -286,7 +304,7 @@
                         <span class="icon-trophy">Ranked 119th over 7500+ entries !</span>
                     </div>
                     <div class="gallery">
-                        <figure><img src="./yaz-gameplay.gif"></figure>
+                        <figure><img src="/yaz-gameplay.gif"></figure>
                     </div>
                 </div>
                 <div class="next">
@@ -302,7 +320,7 @@
                 <div class="content">
                     <div class="time">September 2024</div>
                     <h2>Dune Keepers</h2>
-                    <figure><img src="./dune-keepers.png"></figure>
+                    <figure><img src="/dune-keepers.png"></figure>
                     <div class="description">
                         <p><strong>Dune Keepers&nbsp;</strong>is a&nbsp;<strong>City builder/Tower defense&nbsp;</strong>where you build your city during the day and prepare for the storm !
                         </p>
@@ -328,8 +346,8 @@
                         <span class="icon-trophy">Ranked 1st over 1500+ entries !</span>
                     </div>
                     <div class="gallery">
-                        <figure><img src="./dune-keepers-gameplay-1.gif"></figure>
-                        <figure><img src="./dune-keepers-gameplay-2.gif"></figure>
+                        <figure><img src="/dune-keepers-gameplay-1.gif"></figure>
+                        <figure><img src="/dune-keepers-gameplay-2.gif"></figure>
                     </div>
                 </div>
                 <div class="next">
