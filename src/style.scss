@@ -475,10 +475,7 @@ body {
 }
 body:not(.top) .socials {
     @include mobile {
-        left: 2rem;
-        width: fit-content;
-        transform: unset;
-        top: 4rem;
+        top: 2.5rem;
     }
 }
 .socials {
@@ -513,7 +510,7 @@ body:not(.top) .socials {
             width: 1.5rem;
             height: 1.5rem;
             svg {
-                color: black;
+                color: white;
             }
         }
     }
