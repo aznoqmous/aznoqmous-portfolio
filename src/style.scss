@@ -54,7 +54,7 @@
 
     --color-red: #f43d3d;
     --color-ludum: #f3911e;
-    
+    --color-steam: linear-gradient(to bottom, #002649, #0058a9);
     --background: var(--color-white);
     --color: var(--color-shark-900);
     --accent-color: var(--color-red);
@@ -189,7 +189,11 @@ body {
     color: var(--text-color, black);
     // padding: 2rem;
     flex: none;
-
+    &:last-child {
+        .card .next {
+            display: none;
+        }
+    }
     .content {
         opacity: 0;
         transform: translateY(2rem);
@@ -285,6 +289,9 @@ body {
                     }
                     .itch {
                         background: var(--color-red);
+                    }
+                    .steam {
+                        background: var(--color-steam);
                     }
                     .ludum {
                         background: var(--color-ludum);
