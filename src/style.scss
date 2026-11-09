@@ -54,6 +54,7 @@
 
     --color-red: #f43d3d;
     --color-ludum: #f3911e;
+    --color-paper: var(--color-red);
     --color-steam: linear-gradient(to bottom, #002649, #0058a9);
     --background: var(--color-white);
     --color: var(--color-shark-900);
@@ -179,6 +180,26 @@ body {
     display: flex;
     flex-direction: column;
 }
+%badge {
+    padding: 0.2em 0.4em;
+    border-radius: 0.4em;
+    transition: 0.5s ease;
+    
+    color: var(--color-white);
+    position: relative;
+    overflow: hidden;
+    background: rgba(black, 0.4);
+
+    outline: 2px solid var(--color);
+
+    &:before {
+        content:"";
+        background: var(--color);
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+    }
+}
 .container {
     //max-width: calc(100vw - 10rem);
     scroll-snap-align: center;
@@ -198,7 +219,7 @@ body {
         opacity: 0;
         transform: translateY(2rem);
         transition: 1s ease;
-
+        filter: drop-shadow(0px 4px 1rem rgba(0,0,0,0.16));
         h1 {
             @include mobile {
                 line-height: 0.8em;
@@ -235,13 +256,25 @@ body {
             gap: 0.5rem;
 
             .time {
-                @include textBorder;
+                width: fit-content;
                 margin-bottom: -0.5rem;
+                @include textBorder;
+                // @extend %badge;
+                background: var(--color);
+                padding: 0.5rem;
+                padding-bottom: 1rem;
+                border-radius: 1rem;
+                z-index: 1;
             }
             h2 {
+                margin-top: -1rem;
                 font-size: 3rem;
                 line-height: 1em;
                 @include textBorder;
+                background: var(--color);
+                border-radius: 0rem 1rem 1rem 1rem;
+                padding: 1.0rem;
+                width: fit-content;
             }
 
             > figure {
@@ -260,24 +293,7 @@ body {
                     font-size: 0.8rem;
 
                     a, span {
-                        padding: 0.2em 0.4em;
-                        border-radius: 0.4em;
-                        transition: 0.5s ease;
-                        
-                        color: var(--color-white);
-                        position: relative;
-                        overflow: hidden;
-                        background: rgba(black, 0.4);
-
-                        outline: 2px solid var(--color);
-
-                        &:before {
-                            content:"";
-                            background: var(--color);
-                            position: absolute;
-                            inset: 0;
-                            z-index: -1;
-                        }
+                        @extend %badge;
                     }
                 }
                 .links {
@@ -295,6 +311,9 @@ body {
                     }
                     .ludum {
                         background: var(--color-ludum);
+                    }
+                    .paper {
+                        background: var(--color-paper);
                     }
                 }
                 .languages {
@@ -461,8 +480,8 @@ body {
     }
     .content {   
         line-height: 1.2em;
-
-    }
+        
+    }   
 }
 
 .top .socials {
