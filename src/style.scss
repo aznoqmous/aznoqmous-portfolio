@@ -82,12 +82,14 @@ body
 body {
     position: relative;
     --color: black;
+    --text-color: black;
+    --bacground-color: var(--color);
     scroll-snap-points-y: repeat(300px);
     &:before {
         content: "";
         position: absolute;
         inset: 0;
-        background: var(--color);
+        background: var(--background-color, var(--color));
         z-index: -2;
         transition: 0.5s ease;
     }
@@ -286,7 +288,7 @@ body {
                 flex-wrap: wrap;
                 gap: 0.4em;
                 font-weight: 600;
-        
+                margin: 0.3rem 0;
                 .techs, .languages, .links {
                     display: contents;
                     gap: 0.5rem;
@@ -324,7 +326,7 @@ body {
             }
             .gallery {
                 display: flex;
-                gap: 0.5rem;
+                gap: 0.7rem;
                 figure {
                     height: 9rem;
                     aspect-ratio: 1.6;
@@ -596,4 +598,16 @@ body:not(.top) .socials {
     &:before {
         content: "🥉";
     }
+}
+.icon-quest:before {
+    content: "📜";
+}
+.icon-paint:before {
+    content: "🎨";
+}
+.icon-rocket:before {
+    content: "🚀";
+}
+.icon-metric:before {
+    content: "📐";
 }

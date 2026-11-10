@@ -83,6 +83,11 @@ triggers.map(trigger => {
                 const image = trigger.parentElement.querySelector('img')
                 setImage(image.src)
                 document.body.style.setProperty("--color", trigger.parentElement.dataset.color)
+                document.body.style.setProperty("--text-color", trigger.parentElement.dataset.text)
+                document.body.style.setProperty("--background-color", trigger.parentElement.dataset.background ?? null)
+                if(!trigger.parentElement.dataset.color) document.body.style.removeProperty("--color")
+                if(!trigger.parentElement.dataset.text) document.body.style.removeProperty("--text-color")
+                if(!trigger.parentElement.dataset.background) document.body.style.removeProperty("--background-color")
                 containers.map(c => c.classList.toggle('active', c == container))
                 document.body.classList.toggle('top', !containers.indexOf(containers.find(c => c.classList.contains('active'))))
             }
